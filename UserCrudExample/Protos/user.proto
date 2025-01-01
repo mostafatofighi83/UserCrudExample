@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "UserCrudExample";
+
+package user;
+
+// پیام User
+message User {
+    int32 id = 1;
+    string firstName = 2;
+    string lastName = 3;
+    string code = 4;
+    string birthDate = 5;
+}
+
+// تعریف سرویس
+service UserService {
+    rpc CreateUser (User) returns (User);
+    rpc GetUser (User) returns (User);
+    rpc UpdateUser (User) returns (User);
+    rpc DeleteUser (User) returns (User);
+}
